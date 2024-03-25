@@ -1,0 +1,49 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://bo8q75vdyjd6f"]
+
+[ext_resource type="Texture2D" uid="uid://duf13fnr4uphm" path="res://tilemap-characters_packed.png" id="1_s4fdh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wm5u"]
+atlas = ExtResource("1_s4fdh")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xj2gh"]
+atlas = ExtResource("1_s4fdh")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kb652"]
+atlas = ExtResource("1_s4fdh")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yudqk"]
+atlas = ExtResource("1_s4fdh")
+region = Rect2(48, 0, 24, 24)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wm5u")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xj2gh")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kb652")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yudqk")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]

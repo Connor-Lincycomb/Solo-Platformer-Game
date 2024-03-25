@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://gcok7bsjdk1w"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_2enkk"]
+[ext_resource type="SpriteFrames" uid="uid://bo8q75vdyjd6f" path="res://PlayerBlueSkin.tres" id="2_uufb7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6vof"]
+size = Vector2(12, 17)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_2enkk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_uufb7")
+animation = &"run"
+autoplay = "run"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_o6vof")
+
+[node name="Camera2D" type="Camera2D" parent="."]
