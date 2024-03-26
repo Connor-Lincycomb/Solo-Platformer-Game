@@ -21,3 +21,9 @@ position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_o6vof")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="LadderCheck" type="RayCast2D" parent="."]
+target_position = Vector2(0, 17)
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false

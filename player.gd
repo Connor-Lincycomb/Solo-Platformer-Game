@@ -1,6 +1,10 @@
 extends CharacterBody2D
 class_name Player
 
+# sets a state where MOVE is 0, CLIMB is 1.
+enum { MOVE, CLIMB }
+var state = MOVE
+
 
 const SPEED = 115.0
 const ACCELERATION = 1050.0
@@ -9,10 +13,26 @@ const JUMP_VELOCITY = -260.0
 
 # sets a variable to be a shortcut for the $AnimatedSprite2D
 @onready var animatedSprite = $AnimatedSprite2D
+# sets a variable that checks if you're colliding with a ladder
+@onready var ladderCheck = $LadderCheck
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+# the below two functions will set what happens for climbing a ladder.
+func move_state():
+	pass
+
+func climb_state():
+	pass
+
+
+func is_on_ladder():
+	if not ladderCheck.is_colliding(): return false
+	var collider = ladderCheck.get_collider()
+	if not collider is Ladder: return false
+	return true
 
 func _physics_process(delta):
 	# Add the gravity.
