@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://vengebt2ubc1"]
+[gd_scene load_steps=8 format=3 uid="uid://vengebt2ubc1"]
 
 [ext_resource type="Texture2D" uid="uid://duf13fnr4uphm" path="res://tilemap-characters_packed.png" id="1_iv6i6"]
 [ext_resource type="Script" path="res://walking_enemy.gd" id="1_kwdnk"]
+[ext_resource type="PackedScene" uid="uid://dj2ued45phnxi" path="res://hitbox.tscn" id="3_pe1p8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_coyai"]
 atlas = ExtResource("1_iv6i6")
@@ -26,14 +27,14 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dr353"]
-size = Vector2(11, 10)
+size = Vector2(13, 10)
 
 [node name="Walking Enemy" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_kwdnk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -12)
+position = Vector2(-1, -12)
 sprite_frames = SubResource("SpriteFrames_nj53a")
 flip_h = true
 
@@ -48,3 +49,8 @@ target_position = Vector2(0, 5)
 [node name="LedgeCheckLeft" type="RayCast2D" parent="."]
 position = Vector2(-6, -1)
 target_position = Vector2(0, 5)
+
+[node name="Hitbox" parent="." instance=ExtResource("3_pe1p8")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox"]
+polygon = PackedVector2Array(-8, -1, -8, -9, -4, -11, -2, -11, -2, -14, -1, -16, 0, -16, 1, -14, 1, -11, 3, -11, 7, -9, 7, -1)
