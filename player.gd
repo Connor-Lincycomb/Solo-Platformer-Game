@@ -20,19 +20,7 @@ const JUMP_VELOCITY = -260.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-# the below two functions will set what happens for climbing a ladder.
-func move_state():
-	pass
 
-func climb_state():
-	pass
-
-
-func is_on_ladder():
-	if not ladderCheck.is_colliding(): return false
-	var collider = ladderCheck.get_collider()
-	if not collider is Ladder: return false
-	return true
 
 func _physics_process(delta):
 	# Add the gravity.

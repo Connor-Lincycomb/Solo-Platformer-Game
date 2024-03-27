@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cdd0lthe8vhr1"]
+[gd_scene load_steps=6 format=3 uid="uid://cdd0lthe8vhr1"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_gdy26"]
 [ext_resource type="PackedScene" uid="uid://8asmxw4hyqd4" path="res://tile_map.tscn" id="1_mvjts"]
 [ext_resource type="PackedScene" uid="uid://gcok7bsjdk1w" path="res://player.tscn" id="2_eowub"]
 [ext_resource type="PackedScene" uid="uid://cw3rfry21gydf" path="res://spikes.tscn" id="3_f7vb3"]
 [ext_resource type="PackedScene" uid="uid://vengebt2ubc1" path="res://walking_enemy.tscn" id="5_ovgcx"]
-[ext_resource type="PackedScene" uid="uid://ckodw4o2tygnt" path="res://ladder.tscn" id="6_yk2pg"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_gdy26")
@@ -27,15 +26,6 @@ position = Vector2(214, 128)
 
 [node name="Walking Enemy2" parent="." instance=ExtResource("5_ovgcx")]
 position = Vector2(331, 128)
-
-[node name="Ladder" parent="." instance=ExtResource("6_yk2pg")]
-position = Vector2(106, 90)
-
-[node name="Ladder2" parent="." instance=ExtResource("6_yk2pg")]
-position = Vector2(106, 73)
-
-[node name="Ladder3" parent="." instance=ExtResource("6_yk2pg")]
-position = Vector2(106, 55)
 
 [node name="Player" parent="." instance=ExtResource("2_eowub")]
 position = Vector2(71, 98)
